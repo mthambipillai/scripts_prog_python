@@ -1,4 +1,4 @@
-This repo contains series of python exercices as well as bash scripts to run unit tests on those.
+This repository contains series of python exercices as well as bash scripts to run unit tests on those.
 
 Usually python unit testing with pytest focuses on testing functions in an object oriented way. But these python exercices are intended for beginners and don't contain any functions.
 
