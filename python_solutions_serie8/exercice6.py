@@ -1,26 +1,33 @@
-contacts_noms = []
-contacts_numéros = []
+def carré(nombre):
+	return nombre * nombre
+def cube(nombre):
+	return nombre ** 3
 
-def lister_contacts():
+def carré_tableau(tableau):
 	index = 0
-	print("----------------------------")
-	while(index < len(contacts_noms)):
-		print(contacts_noms[index] + " : " + contacts_numéros[index])
+	while (index < len(tableau)):
+		tableau[index] = carré(tableau[index])
 		index = index + 1
-	print("----------------------------")
+	return tableau
 
-def ajouter_contact():
-	nom = input("Nom du nouveau contact ")
-	numéro = input("Numéro du nouveau contact ")
-	contacts_noms.append(nom)
-	contacts_numéros.append(numéro)
-	print(nom + " : " + numéro + " ajouté.")
+def cube_tableau(tableau):
+	index = 0
+	while (index < len(tableau)):
+		tableau[index] = cube(tableau[index])
+		index = index + 1
+	return tableau
 
-choix = ""
-while (choix != "Q"):
-	choix = input("L pour lister les contacts. A pour ajouter un contact. Q pour quitter.")
-	if (choix == "L"):
-		lister_contacts()
-	if (choix == "A"):
-		ajouter_contact()
-print("Au revoir")
+choix = input("Voulez-vous calculer le carré (2) ou le cube (3) de vos nombres?")
+
+tab = [104, 200, 36, 470, -97, 23, 18, 74, 9, -4]
+index = 0
+
+if (choix == "2"):
+	tab = carré_tableau(tab)
+else:
+	if (choix == "3"):
+		tab = cube_tableau(tab)
+	else:
+		print("Vous devez choisir 2 ou 3.")
+
+print(tab)
